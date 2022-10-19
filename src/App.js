@@ -1,26 +1,25 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
 import Header from './Containers/Header'
-import ProductListing from './Containers/ProductListing';
-import ProductDetail from './Containers/ProductDetail';
-
+import ProductListing from "./Containers/ProductListing.js";
+import ProductDetail from "./Containers/ProductDetail.js";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <Header />
         <Routes>
-
-          <Route path="/" exact component={ProductListing} />
-          <Route path="/product/:prodectId" exact component={ProductDetail} />
+          <Route path="/" element={<ProductListing />} />
+          <Route path="/product/:prodectId" element={<ProductDetail />} />
           <Route>404 Not Found</Route>
         </Routes>
-      </Router>
+      </BrowserRouter>
+
     </div>
   );
 }

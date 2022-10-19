@@ -9,5 +9,5 @@ export const selectedProduct = (product) => {
   return {
     type: ActionTypes.SELECTED_PRODUCT,
     payload: product,
-  }
-}
+  };
+};
